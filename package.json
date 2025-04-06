@@ -13,8 +13,11 @@
     "prettier": "prettier --check ."
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.6.1",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-redux": "^9.2.0",
+    "zustand": "^5.0.3"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
