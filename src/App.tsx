@@ -1,41 +1,12 @@
-import { useState } from 'react';
+import { useRoutes } from 'react-router-dom';
+import routes from './routes';
+
 import './App.css';
 
-import { RtkTodo } from './components/RtkTodo';
-import { store } from './store/TodoRtkStore';
-import { Provider } from 'react-redux';
-
-import ReducerComponent from './components/ReducerComponent';
-import { TodosProvider } from './components/TodosProvider';
-import { TodosContextComponent } from './components/TodosContextComponent';
-import { ZustandTodoComponent } from './components/ZustandTodoComponent';
-
 function App() {
-  const [count, setCount] = useState(0);
+  const routing = useRoutes(routes);
 
-  return (
-    <>
-      <div className='container'>
-        <div>
-          <TodosProvider>
-            <TodosContextComponent />
-          </TodosProvider>
-        </div>
-        <div>
-          <ReducerComponent />
-        </div>
-        <div>
-          <Provider store={store}>
-            <RtkTodo />
-          </Provider>
-        </div>
-        <div>
-          <ZustandTodoComponent />
-        </div>
-      </div>
-      <button onClick={() => setCount((count) => count + 1)}>count is {count}</button>
-    </>
-  );
+  return routing;
 }
 
 export default App;
